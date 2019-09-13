@@ -260,7 +260,7 @@
         if(!this.$textarea.val()) {
             return "";
         }
-        if(typeof this.$textarea.val() === "object") {
+        if(typeof this.$textarea.val() === "object" && !this.cellProperties.chosenOptions.multiple) {
             return this.$textarea.val().join(",");
         }
         return this.$textarea.val();
