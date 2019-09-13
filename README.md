@@ -67,7 +67,7 @@ function customDropdownRenderer(instance, td, row, col, prop, value, cellPropert
     var optionsList = cellProperties.chosenOptions.data;
 
     if(typeof optionsList === "undefined" || typeof optionsList.length === "undefined" || !optionsList.length) {
-        Handsontable.cellTypes.text.renderer(instance, td, row, col, prop, value, cellProperties);
+        Handsontable.renderers.TextRenderer.apply(this, arguments);
         return td;
     }
 
@@ -82,7 +82,7 @@ function customDropdownRenderer(instance, td, row, col, prop, value, cellPropert
     }
     value = value.join(", ");
 
-    Handsontable.cellTypes.text.renderer(instance, td, row, col, prop, value, cellProperties);
+    Handsontable.renderers.TextRenderer.apply(this, arguments);
     return td;
 }
 ```
